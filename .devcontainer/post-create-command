@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# setup aws
+sudo chown vscode:vscode /home/vscode/.aws

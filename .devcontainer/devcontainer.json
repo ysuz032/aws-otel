@@ -25,7 +25,7 @@
 	"forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sudo ln -s /external/credentials /home/vscode/.aws/credentials && sudo chown -R vscode:vscode /home/vscode/.aws",
+	"postCreateCommand": "/init/post-create-command",
 
 	// Configure tool-specific properties. e.g. Extensions to add to the dev container.
 	"customizations": {
@@ -38,7 +38,6 @@
 
 	// Configure mount settings.
 	"mounts": [
-		"source=aws-credentials,target=/external,type=volume,consistency=readonly",
 		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws/config,target=/home/vscode/.aws/config,type=bind,consistency=cached,readonly"
 	]
 
